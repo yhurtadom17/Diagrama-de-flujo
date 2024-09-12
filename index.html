@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Flujo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+        }
+        .module {
+            background-color: white;
+            border: 2px solid #2c3e50;
+            border-radius: 10px;
+            width: 60%;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .module:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: none; 
+        }
+        ul.active {
+            display: block; 
+        }
+        ul ul {
+            padding-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .arrow {
+            width: 30px;
+            height: 30px;
+            margin: 0 auto;
+        }
+        .arrow img {
+            width: 100%;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Diagrama de Flujo</h1>
+
+    <div class="container fade-in">
+        <div class="module" onclick="toggleVisibility(this)">
+            <h2>Entrada</h2>
+            <ul>
+                <li><strong> Algoritmo  1. Crear perfil de usuario (nombre, celular, correo electrónico):</strong>
+                        <li>Verificar formato de los datos</li>
+                        <li>Validar que los campos no estén vacíos</li>
+                        <li>Guardar temporalmente los datos en caché</li>
+                </li>
+                <br>
+                <li><strong> Algoritmo  2. Seleccionar el origen y destino:</strong>
+                
+                        <li>Convertir ubicaciones a coordenadas GPS</li>
+                        <li>Verificar que el valor del trayecto sea válido</li>
+                    
+                </li>
+                <br>
+                <li><strong> Algoritmo  3. Seleccionar tipo de vehículo para movilizarse (bus, etc.):</strong>
+                
+                        <li>Mostrar opciones de transporte según la ruta</li>
+                        <li>Guardar selección del usuario</li>
+                    
+                </li>
+                <br>
+                <li><strong> Algoritmo  4. Localizar ubicación actual del usuario:</strong>
+                
+                        <li>Acceder a la API de geolocalización</li>
+                        <li>Mostrar la ubicación en el mapa</li>
+                        <li>Solicitar permisos del usuario para acceder a la ubicación</li>
+                    
+                </li>
+            </ul>
+        </div>
+
+        <div class="arrow fade-in">
+            <img src="https://img.icons8.com/ios-filled/50/000000/long-arrow-down.png" alt="Flecha">
+        </div>
+
+        <div class="module" onclick="toggleVisibility(this)">
+            <h2>Almacenamiento</h2>
+            <ul>
+                <li><strong> Algoritmo  1. Guardar datos del perfil (nombre, celular, correo electrónico):</strong>
+                
+                        <li>Validar y estructurar los datos en formato de base de datos</li>
+                        <li>Guardar datos en almacenamiento seguro (base de datos o caché)</li>
+                    
+                </li>
+                <br>
+                <li><strong> Algoritmo  2. Guardar preferencias del usuario (tipo de transporte, rutas seguras):</strong>
+                
+                        <li>Validar y almacenar las preferencias seleccionadas</li>
+                    
+                </li>
+                <br>
+                <li><strong> Algoritmo  3. Almacenar datos de rutas descargadas y zonas a evitar (zonas con tráfico, etc.):</strong>
+                
+                        <li>Descargar y guardar rutas seleccionadas</li>
+                        <li>Actualizar zonas a evitar basadas en congestión o peligros</li>
+                    
+                </li>
+                <br>
+                <li><strong> Algoritmo  4. Guardar métodos de pago de manera segura:</strong>
+                
+                        <li>Implementar encriptación para proteger la información</li>
+                        <li>Validar los datos de pago y guardarlos en almacenamiento seguro</li>
+                    
+                </li>
+            </ul>
+        </div>
+
+        <div class="arrow fade-in">
+            <img src="https://img.icons8.com/ios-filled/50/000000/long-arrow-down.png" alt="Flecha">
+        </div>
+
+        <div class="module" onclick="toggleVisibility(this)">
+            <h2>Procesamiento</h2>
+            <ul>
+                <li><strong>Algoritmo 1. Procesar ubicación actual y mostrarla en el mapa:</strong>
+                
+                        <li>Recibir coordenadas GPS</li>
+                        <li>Procesar ubicación con API de mapas</li>
+                        <li>Mostrar la ubicación en tiempo real</li>
+                    
+                </li>
+                <br>
+                <li><strong>Algoritmo 2. Generar rutas según las preferencias del usuario:</strong>
+                
+                        <li>Tomar las preferencias del usuario (tipo de vehículo, rutas seguras)</li>
+                        <li>Calcular la ruta óptima utilizando una API de rutas</li>
+                    
+                </li>
+                <br>
+                <li><strong>Algoritmo 3. Detectar congestiones en tiempo real y generar rutas alternativas:</strong>
+                
+                        <li>Consultar API de tráfico en tiempo real</li>
+                        <li>Detectar congestiones y buscar rutas alternativas</li>
+                    
+                </li>
+                <br>
+                <li><strong>Algoritmo 4. Ajustar las indicaciones de la ruta conforme el usuario avanza:</strong>
+                
+                        <li>Monitorear la ubicación en tiempo real</li>
+                        <li>Recalcular ruta si se detecta un desvío</li>
+                    
+                </li>
+                <br>
+                <li><strong>Algoritmo 5. Distribuir solicitudes concurrentes para optimizar el rendimiento del sistema:</strong>
+                
+                        <li>Distribuir las solicitudes de cálculo de rutas entre varios servidores</li>
+                        <li>Usar técnicas de balanceo de carga para distribuir el procesamiento</li>
+                    
+                </li>
+            </ul>
+        </div>
+
+        <div class="arrow fade-in">
+            <img src="https://img.icons8.com/ios-filled/50/000000/long-arrow-down.png" alt="Flecha">
+        </div>
+
+        <div class="module" onclick="toggleVisibility(this)">
+            <h2>Salida</h2>
+            <ul>
+                <li><strong>Algoritmo 1. Mostrar al usuario las rutas sugeridas con detalles de tiempo y costos:</strong>
+                
+                        <li>Calcular y mostrar el tiempo estimado de viaje y los costos</li>
+                    
+                </li>
+                <br>
+                <li><strong>Algoritmo 2. Permitir al usuario valorar el conductor y guardar su contacto:</strong>
+                
+                        <li>Ofrecer un sistema de valoración al finalizar el viaje</li>
+                        <li>Guardar el contacto del conductor si es necesario</li>
+                    
+                </li>
+                <br>
+                <li><strong>Algoritmo 3. Mostrar el informe detallado del viaje (tiempo, costo, etc.):</strong>
+                
+                        <li>Generar y mostrar un resumen detallado del viaje</li>
+                    
+                </li>
+                <br>
+                <li><strong>Algoritmo 4. Mostrar el historial de viajes realizados:</strong>
+                
+                        <li>Recuperar y mostrar los viajes anteriores del usuario</li>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleVisibility(element) {
+            const list = element.querySelector('ul');
+          	
+            list.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
